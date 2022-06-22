@@ -24,7 +24,7 @@ import { ListingTypeComponent } from './listing-type/listing-type.component';
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 
-  { path: 'home', component: HomeComponent },
+  { path: 'home/:locationId', component: HomeComponent },
 
   { path: 'signin', component: SigninComponent },
 

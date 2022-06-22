@@ -22,32 +22,29 @@ import { ListingNameComponent } from './listing-name/listing-name.component';
 import { ListingTypeComponent } from './listing-type/listing-type.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home/1', pathMatch: 'full' },
 
-  { path: 'home', component: HomeComponent },
+  { path: 'home/:locationId', component: HomeComponent, },
+  
+  { path: 'signin', component: SigninComponent, },
+  
+  { path: 'signup', component: SignupComponent, },
+  
+  { path: 'listings', component: ListingsComponent, },
+  
+  { path: 'listingsbytype/:listFor', component: ListingTypeComponent, },
 
-  { path: 'signin', component: SigninComponent },
+  { path: 'listingsbylocation/:locationId', component: ListingLocationComponent, },
 
-  { path: 'signup', component: SignupComponent },
-
-  { path: 'listings', component: ListingsComponent },
-
-  { path: 'listingsbytype/:listFor', component: ListingTypeComponent },
-
-  {
-    path: 'listingsbylocation/:locationId',
-    component: ListingLocationComponent
-  },
-
-  { path: 'listingsbyname/:name', component: ListingNameComponent },
-
-  { path: 'property/:propertyId', component: PropertyComponent },
-
-  { path: 'wishlist/:userId', component: WishlistComponent },
-
-  { path: 'bookings/:userId', component: BookingsComponent },
-
-  { path: '**', component: PagenotfoundComponent }
+  { path: 'listingsbyname/:name', component: ListingNameComponent, },
+  
+  { path: 'property/:propertyId', component: PropertyComponent, },
+  
+  { path: 'wishlist/:userId', component: WishlistComponent, },
+  
+  { path: 'bookings/:userId', component: BookingsComponent, },
+  
+  { path: '**', component: PagenotfoundComponent },
 ];
 
 @NgModule({
@@ -73,9 +70,9 @@ export const routes: Routes = [
     HttpClientModule,
     CommonModule,
     RouterModule.forRoot(routes),
-    NgbModule
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
